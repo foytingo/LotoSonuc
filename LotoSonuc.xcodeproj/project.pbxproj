@@ -7,23 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46867DDD240903940081A709 /* LSNumbersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DDC240903940081A709 /* LSNumbersVC.swift */; };
+		46867DDF240904100081A709 /* LSBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DDE240904100081A709 /* LSBallView.swift */; };
+		46867DE3240924D20081A709 /* LSDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DE2240924D20081A709 /* LSDataLoadingVC.swift */; };
+		46867DE524092EC90081A709 /* LSHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DE424092EC90081A709 /* LSHeaderVC.swift */; };
+		46867DE824092F990081A709 /* LSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DE724092F990081A709 /* LSButton.swift */; };
+		46867DEA24093C220081A709 /* TarihListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DE924093C220081A709 /* TarihListVC.swift */; };
 		469ABEA62407CB250013D0AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEA52407CB250013D0AF /* AppDelegate.swift */; };
 		469ABEA82407CB250013D0AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEA72407CB250013D0AF /* SceneDelegate.swift */; };
-		469ABEAA2407CB250013D0AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEA92407CB250013D0AF /* ViewController.swift */; };
-		469ABEAD2407CB250013D0AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469ABEAB2407CB250013D0AF /* Main.storyboard */; };
 		469ABEAF2407CB2A0013D0AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469ABEAE2407CB2A0013D0AF /* Assets.xcassets */; };
 		469ABEB22407CB2A0013D0AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469ABEB02407CB2A0013D0AF /* LaunchScreen.storyboard */; };
+		469ABEBA2407CB700013D0AF /* SonucData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEB92407CB700013D0AF /* SonucData.swift */; };
+		469ABEBC2407CE190013D0AF /* SonucManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEBB2407CE190013D0AF /* SonucManager.swift */; };
+		469ABEC02407D1B70013D0AF /* LSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEBF2407D1B70013D0AF /* LSError.swift */; };
+		469ABEC42407E5A00013D0AF /* LSTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEC32407E5A00013D0AF /* LSTitleLabel.swift */; };
+		469ABEC62407E5E10013D0AF /* SayisalLotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEC52407E5E10013D0AF /* SayisalLotoVC.swift */; };
+		469ABEC82407E6A50013D0AF /* LSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEC72407E6A50013D0AF /* LSTabBarController.swift */; };
+		469ABECA2407E7020013D0AF /* OnNumaraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEC92407E7020013D0AF /* OnNumaraVC.swift */; };
+		469ABECC2407E71C0013D0AF /* SansTopuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABECB2407E71C0013D0AF /* SansTopuVC.swift */; };
+		469ABECE2407E7370013D0AF /* SuperLotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABECD2407E7370013D0AF /* SuperLotoVC.swift */; };
+		469ABEDB2407EFA20013D0AF /* LSNumberLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEDA2407EFA20013D0AF /* LSNumberLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46867DDC240903940081A709 /* LSNumbersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSNumbersVC.swift; sourceTree = "<group>"; };
+		46867DDE240904100081A709 /* LSBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSBallView.swift; sourceTree = "<group>"; };
+		46867DE2240924D20081A709 /* LSDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSDataLoadingVC.swift; sourceTree = "<group>"; };
+		46867DE424092EC90081A709 /* LSHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSHeaderVC.swift; sourceTree = "<group>"; };
+		46867DE724092F990081A709 /* LSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSButton.swift; sourceTree = "<group>"; };
+		46867DE924093C220081A709 /* TarihListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarihListVC.swift; sourceTree = "<group>"; };
 		469ABEA22407CB250013D0AF /* LotoSonuc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LotoSonuc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		469ABEA52407CB250013D0AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		469ABEA72407CB250013D0AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		469ABEA92407CB250013D0AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		469ABEAC2407CB250013D0AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		469ABEAE2407CB2A0013D0AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		469ABEB12407CB2A0013D0AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		469ABEB32407CB2A0013D0AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		469ABEB92407CB700013D0AF /* SonucData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonucData.swift; sourceTree = "<group>"; };
+		469ABEBB2407CE190013D0AF /* SonucManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonucManager.swift; sourceTree = "<group>"; };
+		469ABEBF2407D1B70013D0AF /* LSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSError.swift; sourceTree = "<group>"; };
+		469ABEC32407E5A00013D0AF /* LSTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSTitleLabel.swift; sourceTree = "<group>"; };
+		469ABEC52407E5E10013D0AF /* SayisalLotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayisalLotoVC.swift; sourceTree = "<group>"; };
+		469ABEC72407E6A50013D0AF /* LSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSTabBarController.swift; sourceTree = "<group>"; };
+		469ABEC92407E7020013D0AF /* OnNumaraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnNumaraVC.swift; sourceTree = "<group>"; };
+		469ABECB2407E71C0013D0AF /* SansTopuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SansTopuVC.swift; sourceTree = "<group>"; };
+		469ABECD2407E7370013D0AF /* SuperLotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperLotoVC.swift; sourceTree = "<group>"; };
+		469ABEDA2407EFA20013D0AF /* LSNumberLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSNumberLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +65,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46867DDA240902EC0081A709 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				469ABEC72407E6A50013D0AF /* LSTabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		46867DDB240902F80081A709 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				469ABEC32407E5A00013D0AF /* LSTitleLabel.swift */,
+				469ABEDA2407EFA20013D0AF /* LSNumberLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		46867DE024091E010081A709 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46867DDE240904100081A709 /* LSBallView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46867DE124091E070081A709 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				46867DE424092EC90081A709 /* LSHeaderVC.swift */,
+				46867DDC240903940081A709 /* LSNumbersVC.swift */,
+				46867DE2240924D20081A709 /* LSDataLoadingVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		46867DE624092F7A0081A709 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				46867DE724092F990081A709 /* LSButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		469ABE992407CB250013D0AF = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +127,74 @@
 		469ABEA42407CB250013D0AF /* LotoSonuc */ = {
 			isa = PBXGroup;
 			children = (
-				469ABEA52407CB250013D0AF /* AppDelegate.swift */,
-				469ABEA72407CB250013D0AF /* SceneDelegate.swift */,
-				469ABEA92407CB250013D0AF /* ViewController.swift */,
-				469ABEAB2407CB250013D0AF /* Main.storyboard */,
-				469ABEAE2407CB2A0013D0AF /* Assets.xcassets */,
-				469ABEB02407CB2A0013D0AF /* LaunchScreen.storyboard */,
+				469ABED72407E9C80013D0AF /* Support */,
 				469ABEB32407CB2A0013D0AF /* Info.plist */,
+				469ABED22407E9990013D0AF /* Model */,
+				469ABED32407E9A00013D0AF /* Managers */,
+				469ABED62407E9B80013D0AF /* Utilities */,
+				469ABED42407E9AB0013D0AF /* Custom Views */,
+				469ABECF2407E9750013D0AF /* Screens */,
 			);
 			path = LotoSonuc;
+			sourceTree = "<group>";
+		};
+		469ABECF2407E9750013D0AF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				469ABEC52407E5E10013D0AF /* SayisalLotoVC.swift */,
+				469ABEC92407E7020013D0AF /* OnNumaraVC.swift */,
+				469ABECB2407E71C0013D0AF /* SansTopuVC.swift */,
+				469ABECD2407E7370013D0AF /* SuperLotoVC.swift */,
+				46867DE924093C220081A709 /* TarihListVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		469ABED22407E9990013D0AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				469ABEB92407CB700013D0AF /* SonucData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		469ABED32407E9A00013D0AF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				469ABEBB2407CE190013D0AF /* SonucManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		469ABED42407E9AB0013D0AF /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				46867DE624092F7A0081A709 /* Buttons */,
+				46867DDB240902F80081A709 /* Labels */,
+				46867DDA240902EC0081A709 /* TabBarController */,
+				46867DE124091E070081A709 /* ViewControllers */,
+				46867DE024091E010081A709 /* Views */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		469ABED62407E9B80013D0AF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				469ABEBF2407D1B70013D0AF /* LSError.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		469ABED72407E9C80013D0AF /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				469ABEA52407CB250013D0AF /* AppDelegate.swift */,
+				469ABEA72407CB250013D0AF /* SceneDelegate.swift */,
+				469ABEAE2407CB2A0013D0AF /* Assets.xcassets */,
+				469ABEB02407CB2A0013D0AF /* LaunchScreen.storyboard */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +257,6 @@
 			files = (
 				469ABEB22407CB2A0013D0AF /* LaunchScreen.storyboard in Resources */,
 				469ABEAF2407CB2A0013D0AF /* Assets.xcassets in Resources */,
-				469ABEAD2407CB250013D0AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +267,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469ABEAA2407CB250013D0AF /* ViewController.swift in Sources */,
+				46867DDD240903940081A709 /* LSNumbersVC.swift in Sources */,
+				46867DDF240904100081A709 /* LSBallView.swift in Sources */,
+				469ABEC42407E5A00013D0AF /* LSTitleLabel.swift in Sources */,
+				46867DEA24093C220081A709 /* TarihListVC.swift in Sources */,
+				469ABEBA2407CB700013D0AF /* SonucData.swift in Sources */,
+				469ABECE2407E7370013D0AF /* SuperLotoVC.swift in Sources */,
+				469ABEC82407E6A50013D0AF /* LSTabBarController.swift in Sources */,
+				469ABEDB2407EFA20013D0AF /* LSNumberLabel.swift in Sources */,
+				469ABEBC2407CE190013D0AF /* SonucManager.swift in Sources */,
+				469ABEC62407E5E10013D0AF /* SayisalLotoVC.swift in Sources */,
+				469ABECC2407E71C0013D0AF /* SansTopuVC.swift in Sources */,
 				469ABEA62407CB250013D0AF /* AppDelegate.swift in Sources */,
 				469ABEA82407CB250013D0AF /* SceneDelegate.swift in Sources */,
+				46867DE524092EC90081A709 /* LSHeaderVC.swift in Sources */,
+				46867DE824092F990081A709 /* LSButton.swift in Sources */,
+				469ABEC02407D1B70013D0AF /* LSError.swift in Sources */,
+				46867DE3240924D20081A709 /* LSDataLoadingVC.swift in Sources */,
+				469ABECA2407E7020013D0AF /* OnNumaraVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		469ABEAB2407CB250013D0AF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				469ABEAC2407CB250013D0AF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		469ABEB02407CB2A0013D0AF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,7 +427,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.foytingo.LotoSonuc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foytingo.BiletTakip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,7 +445,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.foytingo.LotoSonuc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foytingo.BiletTakip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
