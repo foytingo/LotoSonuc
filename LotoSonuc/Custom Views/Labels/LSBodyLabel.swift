@@ -1,14 +1,14 @@
 //
-//  LSTitleLabel.swift
+//  LSBodyLabel.swift
 //  LotoSonuc
 //
-//  Created by Murat Baykor on 27.02.2020.
+//  Created by Murat Baykor on 2.03.2020.
 //  Copyright © 2020 Murat Baykor. All rights reserved.
 //
 
 import UIKit
 
-class LSTitleLabel: UILabel {
+class LSBodyLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,13 +22,12 @@ class LSTitleLabel: UILabel {
 
     private func configure(){
         
-        textColor = .label
+        textColor = .secondaryLabel
         textAlignment = .left
-        font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        minimumScaleFactor = 0.8
+        adjustsFontSizeToFitWidth   = true
+        font = UIFont.systemFont(ofSize: 16, weight: .light)
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func set(symbol: String){
-        text = symbol
-    }
 }

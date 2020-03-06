@@ -12,7 +12,9 @@ struct SonucManager {
     
     static let shared = SonucManager()
     
+    
     let baseuUrl = "http://www.mpi.gov.tr/sonuclar/cekilisler/"
+    
     
     func getDates(for gameName: String, completed: @escaping (Result<[[String : String]],LSError>) ->Void){
         
@@ -60,7 +62,6 @@ struct SonucManager {
     func getSonuc(for gameName:String, date dateValue:String, completed: @escaping (Result<SonucData,LSError>) ->Void){
         
         let endPoint = baseuUrl + gameName + dateValue + ".json"
-        print(endPoint)
         guard let url = URL(string: endPoint) else {
             completed(.failure(.invalidGameNameOrDate))
             return

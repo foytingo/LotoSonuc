@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46867DDD240903940081A709 /* LSNumbersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DDC240903940081A709 /* LSNumbersVC.swift */; };
+		46250FC4240AE1D20044E17E /* LSNumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46250FC3240AE1D20044E17E /* LSNumbersView.swift */; };
+		46250FC6240AE7750044E17E /* LSHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46250FC5240AE7750044E17E /* LSHeaderView.swift */; };
+		4639C312241126800024FA55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639C311241126800024FA55 /* Constants.swift */; };
 		46867DDF240904100081A709 /* LSBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DDE240904100081A709 /* LSBallView.swift */; };
 		46867DE3240924D20081A709 /* LSDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DE2240924D20081A709 /* LSDataLoadingVC.swift */; };
-		46867DE524092EC90081A709 /* LSHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DE424092EC90081A709 /* LSHeaderVC.swift */; };
 		46867DE824092F990081A709 /* LSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DE724092F990081A709 /* LSButton.swift */; };
 		46867DEA24093C220081A709 /* TarihListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46867DE924093C220081A709 /* TarihListVC.swift */; };
 		469ABEA62407CB250013D0AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEA52407CB250013D0AF /* AppDelegate.swift */; };
@@ -27,13 +28,29 @@
 		469ABECC2407E71C0013D0AF /* SansTopuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABECB2407E71C0013D0AF /* SansTopuVC.swift */; };
 		469ABECE2407E7370013D0AF /* SuperLotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABECD2407E7370013D0AF /* SuperLotoVC.swift */; };
 		469ABEDB2407EFA20013D0AF /* LSNumberLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469ABEDA2407EFA20013D0AF /* LSNumberLabel.swift */; };
+		46A1701E240FA596001B31EA /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1701D240FA596001B31EA /* NotificationManager.swift */; };
+		46AA53C4240E499C00F85313 /* LSAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA53C3240E499C00F85313 /* LSAlertContainerView.swift */; };
+		46AA53C6240E4A2B00F85313 /* LSAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA53C5240E4A2B00F85313 /* LSAlertVC.swift */; };
+		46AA53C8240E4B0D00F85313 /* LSErrorTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA53C7240E4B0D00F85313 /* LSErrorTitleLabel.swift */; };
+		46AA53CA240E4B6100F85313 /* LSErrorBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA53C9240E4B6100F85313 /* LSErrorBodyLabel.swift */; };
+		46AA53CC240E4DE500F85313 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA53CB240E4DE500F85313 /* UIViewController+Ext.swift */; };
+		46AA53CE240E616300F85313 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA53CD240E616300F85313 /* Double+Ext.swift */; };
+		46C91549240CFC2700B1EE30 /* LSDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C91548240CFC2700B1EE30 /* LSDetailsView.swift */; };
+		46C9154B240CFD2100B1EE30 /* LSBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9154A240CFD2100B1EE30 /* LSBodyLabel.swift */; };
+		46C9154F240D03DF00B1EE30 /* LSKnownNumberLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9154E240D03DF00B1EE30 /* LSKnownNumberLabel.swift */; };
+		46C91551240D054A00B1EE30 /* LSKnownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C91550240D054A00B1EE30 /* LSKnownView.swift */; };
+		46C91559240D227100B1EE30 /* LSNumbersTenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C91558240D227100B1EE30 /* LSNumbersTenView.swift */; };
+		46C9155C240D2CEF00B1EE30 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9155B240D2CEF00B1EE30 /* UIView+Ext.swift */; };
+		46C9155E240D39DF00B1EE30 /* LSNumbersFivePlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C9155D240D39DF00B1EE30 /* LSNumbersFivePlusView.swift */; };
+		46C91562240D461A00B1EE30 /* LSDetailsSansTopuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C91561240D461A00B1EE30 /* LSDetailsSansTopuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		46867DDC240903940081A709 /* LSNumbersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSNumbersVC.swift; sourceTree = "<group>"; };
+		46250FC3240AE1D20044E17E /* LSNumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSNumbersView.swift; sourceTree = "<group>"; };
+		46250FC5240AE7750044E17E /* LSHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSHeaderView.swift; sourceTree = "<group>"; };
+		4639C311241126800024FA55 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		46867DDE240904100081A709 /* LSBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSBallView.swift; sourceTree = "<group>"; };
 		46867DE2240924D20081A709 /* LSDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSDataLoadingVC.swift; sourceTree = "<group>"; };
-		46867DE424092EC90081A709 /* LSHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSHeaderVC.swift; sourceTree = "<group>"; };
 		46867DE724092F990081A709 /* LSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSButton.swift; sourceTree = "<group>"; };
 		46867DE924093C220081A709 /* TarihListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarihListVC.swift; sourceTree = "<group>"; };
 		469ABEA22407CB250013D0AF /* LotoSonuc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LotoSonuc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +69,21 @@
 		469ABECB2407E71C0013D0AF /* SansTopuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SansTopuVC.swift; sourceTree = "<group>"; };
 		469ABECD2407E7370013D0AF /* SuperLotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperLotoVC.swift; sourceTree = "<group>"; };
 		469ABEDA2407EFA20013D0AF /* LSNumberLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSNumberLabel.swift; sourceTree = "<group>"; };
+		46A1701D240FA596001B31EA /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		46AA53C3240E499C00F85313 /* LSAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSAlertContainerView.swift; sourceTree = "<group>"; };
+		46AA53C5240E4A2B00F85313 /* LSAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSAlertVC.swift; sourceTree = "<group>"; };
+		46AA53C7240E4B0D00F85313 /* LSErrorTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSErrorTitleLabel.swift; sourceTree = "<group>"; };
+		46AA53C9240E4B6100F85313 /* LSErrorBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSErrorBodyLabel.swift; sourceTree = "<group>"; };
+		46AA53CB240E4DE500F85313 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		46AA53CD240E616300F85313 /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
+		46C91548240CFC2700B1EE30 /* LSDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSDetailsView.swift; sourceTree = "<group>"; };
+		46C9154A240CFD2100B1EE30 /* LSBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSBodyLabel.swift; sourceTree = "<group>"; };
+		46C9154E240D03DF00B1EE30 /* LSKnownNumberLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSKnownNumberLabel.swift; sourceTree = "<group>"; };
+		46C91550240D054A00B1EE30 /* LSKnownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSKnownView.swift; sourceTree = "<group>"; };
+		46C91558240D227100B1EE30 /* LSNumbersTenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSNumbersTenView.swift; sourceTree = "<group>"; };
+		46C9155B240D2CEF00B1EE30 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		46C9155D240D39DF00B1EE30 /* LSNumbersFivePlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSNumbersFivePlusView.swift; sourceTree = "<group>"; };
+		46C91561240D461A00B1EE30 /* LSDetailsSansTopuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSDetailsSansTopuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +97,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4639C315241137C60024FA55 /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				46867DDE240904100081A709 /* LSBallView.swift */,
+				46250FC3240AE1D20044E17E /* LSNumbersView.swift */,
+				46C9155D240D39DF00B1EE30 /* LSNumbersFivePlusView.swift */,
+				46C91558240D227100B1EE30 /* LSNumbersTenView.swift */,
+			);
+			path = Numbers;
+			sourceTree = "<group>";
+		};
+		4639C316241137EF0024FA55 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				46C91548240CFC2700B1EE30 /* LSDetailsView.swift */,
+				46C91561240D461A00B1EE30 /* LSDetailsSansTopuView.swift */,
+				46C91550240D054A00B1EE30 /* LSKnownView.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		46867DDA240902EC0081A709 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +131,10 @@
 			children = (
 				469ABEC32407E5A00013D0AF /* LSTitleLabel.swift */,
 				469ABEDA2407EFA20013D0AF /* LSNumberLabel.swift */,
+				46C9154A240CFD2100B1EE30 /* LSBodyLabel.swift */,
+				46C9154E240D03DF00B1EE30 /* LSKnownNumberLabel.swift */,
+				46AA53C7240E4B0D00F85313 /* LSErrorTitleLabel.swift */,
+				46AA53C9240E4B6100F85313 /* LSErrorBodyLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -85,7 +142,10 @@
 		46867DE024091E010081A709 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				46867DDE240904100081A709 /* LSBallView.swift */,
+				4639C315241137C60024FA55 /* Numbers */,
+				46250FC5240AE7750044E17E /* LSHeaderView.swift */,
+				4639C316241137EF0024FA55 /* Details */,
+				46AA53C3240E499C00F85313 /* LSAlertContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -93,9 +153,8 @@
 		46867DE124091E070081A709 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				46867DE424092EC90081A709 /* LSHeaderVC.swift */,
-				46867DDC240903940081A709 /* LSNumbersVC.swift */,
 				46867DE2240924D20081A709 /* LSDataLoadingVC.swift */,
+				46AA53C5240E4A2B00F85313 /* LSAlertVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,13 +186,14 @@
 		469ABEA42407CB250013D0AF /* LotoSonuc */ = {
 			isa = PBXGroup;
 			children = (
-				469ABED72407E9C80013D0AF /* Support */,
-				469ABEB32407CB2A0013D0AF /* Info.plist */,
+				46C9155A240D2CDA00B1EE30 /* Extensions */,
 				469ABED22407E9990013D0AF /* Model */,
 				469ABED32407E9A00013D0AF /* Managers */,
 				469ABED62407E9B80013D0AF /* Utilities */,
 				469ABED42407E9AB0013D0AF /* Custom Views */,
 				469ABECF2407E9750013D0AF /* Screens */,
+				469ABED72407E9C80013D0AF /* Support */,
+				469ABEB32407CB2A0013D0AF /* Info.plist */,
 			);
 			path = LotoSonuc;
 			sourceTree = "<group>";
@@ -162,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				469ABEBB2407CE190013D0AF /* SonucManager.swift */,
+				46A1701D240FA596001B31EA /* NotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -182,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				469ABEBF2407D1B70013D0AF /* LSError.swift */,
+				4639C311241126800024FA55 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -195,6 +257,16 @@
 				469ABEB02407CB2A0013D0AF /* LaunchScreen.storyboard */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		46C9155A240D2CDA00B1EE30 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				46C9155B240D2CEF00B1EE30 /* UIView+Ext.swift */,
+				46AA53CB240E4DE500F85313 /* UIViewController+Ext.swift */,
+				46AA53CD240E616300F85313 /* Double+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,24 +339,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46867DDD240903940081A709 /* LSNumbersVC.swift in Sources */,
 				46867DDF240904100081A709 /* LSBallView.swift in Sources */,
+				46C9154B240CFD2100B1EE30 /* LSBodyLabel.swift in Sources */,
 				469ABEC42407E5A00013D0AF /* LSTitleLabel.swift in Sources */,
 				46867DEA24093C220081A709 /* TarihListVC.swift in Sources */,
 				469ABEBA2407CB700013D0AF /* SonucData.swift in Sources */,
 				469ABECE2407E7370013D0AF /* SuperLotoVC.swift in Sources */,
+				46AA53CA240E4B6100F85313 /* LSErrorBodyLabel.swift in Sources */,
 				469ABEC82407E6A50013D0AF /* LSTabBarController.swift in Sources */,
 				469ABEDB2407EFA20013D0AF /* LSNumberLabel.swift in Sources */,
+				46250FC6240AE7750044E17E /* LSHeaderView.swift in Sources */,
+				46C9154F240D03DF00B1EE30 /* LSKnownNumberLabel.swift in Sources */,
 				469ABEBC2407CE190013D0AF /* SonucManager.swift in Sources */,
+				46C91562240D461A00B1EE30 /* LSDetailsSansTopuView.swift in Sources */,
+				46C91551240D054A00B1EE30 /* LSKnownView.swift in Sources */,
+				46AA53CC240E4DE500F85313 /* UIViewController+Ext.swift in Sources */,
+				46C9155C240D2CEF00B1EE30 /* UIView+Ext.swift in Sources */,
 				469ABEC62407E5E10013D0AF /* SayisalLotoVC.swift in Sources */,
 				469ABECC2407E71C0013D0AF /* SansTopuVC.swift in Sources */,
+				46A1701E240FA596001B31EA /* NotificationManager.swift in Sources */,
 				469ABEA62407CB250013D0AF /* AppDelegate.swift in Sources */,
+				46250FC4240AE1D20044E17E /* LSNumbersView.swift in Sources */,
 				469ABEA82407CB250013D0AF /* SceneDelegate.swift in Sources */,
-				46867DE524092EC90081A709 /* LSHeaderVC.swift in Sources */,
+				46AA53C6240E4A2B00F85313 /* LSAlertVC.swift in Sources */,
 				46867DE824092F990081A709 /* LSButton.swift in Sources */,
+				4639C312241126800024FA55 /* Constants.swift in Sources */,
+				46C91549240CFC2700B1EE30 /* LSDetailsView.swift in Sources */,
+				46AA53C4240E499C00F85313 /* LSAlertContainerView.swift in Sources */,
+				46AA53CE240E616300F85313 /* Double+Ext.swift in Sources */,
 				469ABEC02407D1B70013D0AF /* LSError.swift in Sources */,
 				46867DE3240924D20081A709 /* LSDataLoadingVC.swift in Sources */,
+				46C91559240D227100B1EE30 /* LSNumbersTenView.swift in Sources */,
+				46C9155E240D39DF00B1EE30 /* LSNumbersFivePlusView.swift in Sources */,
 				469ABECA2407E7020013D0AF /* OnNumaraVC.swift in Sources */,
+				46AA53C8240E4B0D00F85313 /* LSErrorTitleLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

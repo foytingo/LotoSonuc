@@ -1,34 +1,31 @@
 //
-//  LSTitleLabel.swift
+//  LSAlertContainerView.swift
 //  LotoSonuc
 //
-//  Created by Murat Baykor on 27.02.2020.
+//  Created by Murat Baykor on 3.03.2020.
 //  Copyright © 2020 Murat Baykor. All rights reserved.
 //
 
 import UIKit
 
-class LSTitleLabel: UILabel {
-    
+class LSAlertContainerView: UIView {
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-
-    private func configure(){
-        
-        textColor = .label
-        textAlignment = .left
-        font = UIFont.systemFont(ofSize: 18, weight: .regular)
-        translatesAutoresizingMaskIntoConstraints = false
-    }
     
-    func set(symbol: String){
-        text = symbol
+    private func configure(){
+        backgroundColor = .systemBackground
+        layer.cornerRadius = 16
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.white.cgColor
+        translatesAutoresizingMaskIntoConstraints = false
     }
 }

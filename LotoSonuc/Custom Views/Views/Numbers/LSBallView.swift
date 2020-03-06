@@ -18,17 +18,19 @@ class LSBallView: UIView {
         configureLabel()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     private func configure(){
         backgroundColor = .systemYellow
         layer.cornerRadius = 10
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-     
     }
+    
     
     private func configureLabel(){
         addSubview(numberLabel)

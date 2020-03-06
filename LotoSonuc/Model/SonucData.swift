@@ -34,3 +34,8 @@ struct BuyukIkrKazananIlIlceler: Decodable {
     let ilView: String
     let ilceView: String
 }
+
+struct Tarih {
+    let tarih: String
+    let tarihValue: String
+}

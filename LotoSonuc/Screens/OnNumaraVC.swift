@@ -8,131 +8,259 @@
 
 import UIKit
 
-
-
 class OnNumaraVC: LSDataLoadingVC {
     
-    let headerView = UIView()
-    let ballView = UIView()
-
-    var sonTarih: String!
+    let defaults = UserDefaults.standard
+    let notificationManager = NotificationManager()
+    let name = Notification.Name(rawValue: NotificationKey.foregroundKey)
+    
+    let scrollView = UIScrollView()
+    let contentView = UIView()
+    let refreshControl = UIRefreshControl()
+    
+    let headerView = LSHeaderView()
+    let numberView = LSNumbersTenView()
+    let detailView = LSDetailsView()
+    
+    var tarihRow: Int = 0
+    var isAlarmSet : Bool = false
+    var tarihler: [[String : String]]? {
+        didSet {
+            self.getSonuc(date: self.tarihler![tarihRow]["tarih"]!)
+        }
+    }
+    
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .systemBackground
+        createObserver()
+        configureNavBar()
+        configureScrollView()
         configureHeaderView()
-        configureBallsView()
-        getSonTariheGoreSonuc()
-        
-        
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        configureNumberView()
+        configureDetailView()
+        configureRefreshControl()
+        getTarihler()
     }
     
     
-    private func getSonTariheGoreSonuc(){
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let tarihlerWrapped = tarihler {
+            getSonuc(date: tarihlerWrapped[tarihRow]["tarih"]!)
+        }
+    }
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+          tarihRow = 0
+      }
+    
+      
+      func createObserver(){
+          NotificationCenter.default.addObserver(self, selector: #selector(printIfNotification), name: name, object: nil)
+      }
+    
+      
+      @objc func printIfNotification(){
+          if let tarihlerWrapped = tarihler {
+              getSonuc(date: tarihlerWrapped[tarihRow]["tarih"]!)
+          }
+      }
+    
+    
+    func configureNavBar(){
+        let bellFill : UIBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell.fill"), style: .plain, target: self, action: #selector(bellFillButtonAction))
+        let bell : UIBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: self, action: #selector(bellButtonAction))
+        
+        isAlarmSet = defaults.bool(forKey: UserDefaultsKey.onNumaraAlarmSet)
+        navigationItem.rightBarButtonItem = isAlarmSet ? bellFill : bell
+    }
+    
+    
+    @objc func bellFillButtonAction(){
+        isAlarmSet = !isAlarmSet
+        defaults.set(isAlarmSet, forKey: UserDefaultsKey.onNumaraAlarmSet)
+        cancelNotification()
+    }
+    
+    
+    @objc func bellButtonAction() {
+        isAlarmSet = !isAlarmSet
+        defaults.set(isAlarmSet, forKey: UserDefaultsKey.onNumaraAlarmSet)
+        checkNotificationAuthAndSetNotification()
+    }
+    
+    
+    private func checkNotificationAuthAndSetNotification(){
+        notificationManager.center.getNotificationSettings { (settings) in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                self.notificationManager.askPermission()
+            case .denied:
+                self.presentLSAlertOnMainThread(title: Bildirimler.kapaliAlertTitle, titleColor: UIColor.systemRed, message: Bildirimler.kapaliAlertTitle, buttonTitle: Alert.buttonTamam)
+            case .authorized:
+                self.setNotification()
+            case .provisional:
+                self.setNotification()
+            @unknown default:
+                break
+            }
+        }
+    }
+    
+    
+    private func setNotification(){
+        notificationManager.reminderNotifications(identifier: Identifier.onNumara0, title: Bildirimler.onNumaraBildirimTitle, body: Bildirimler.onNumaraOyunHatirlatma, weekday: 2, hour: 17, minute: 30)
+        
+        notificationManager.resultNotifications(identifier: Identifier.onNumara1, title: Bildirimler.onNumaraBildirimTitle, body: Bildirimler.onNumaraSonucHatirlatma , weekday: 2, hour: 21, minute: 45)
+        
+        self.presentLSAlertOnMainThread(title: Bildirimler.acildiTitle, titleColor: UIColor.label, message: Bildirimler.acildiOnNumaraBody, buttonTitle: Alert.buttonTamam)
+       
+        DispatchQueue.main.async {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell.fill"), style: .plain, target: self, action: #selector(self.bellFillButtonAction))
+        }
+    }
+    
+    
+    private func cancelNotification(){
+        notificationManager.center.removePendingNotificationRequests(withIdentifiers: [Identifier.onNumara0,Identifier.onNumara1])
+        
+        self.presentLSAlertOnMainThread(title: Bildirimler.kapandiTitle, titleColor: UIColor.label, message: Bildirimler.kapandiOnNumaraBody, buttonTitle: Alert.buttonTamam)
+        
+        DispatchQueue.main.async {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: self, action: #selector(self.bellButtonAction))
+        }
+    }
+    
+    
+    private func configureScrollView() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        scrollView.pinToEdge(of: view)
+        contentView.pinToEdge(of: scrollView)
+        
+        NSLayoutConstraint.activate([
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 890)
+        ])
+    }
+    
+    
+    private func configureRefreshControl(){
+        scrollView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+    }
+    
+    
+    @objc func pullToRefresh(){
+        tarihRow = 0
+        getTarihler()
+    }
+    
+    
+    private func getTarihler(){
+        refreshControl.endRefreshing()
         showLoadingView()
-        SonucManager.shared.getDates(for: "sayisal") { [weak self]result in
+        SonucManager.shared.getDates(for: "onnumara") { [weak self]result in
             guard let self = self else { return }
+            self.dismissLoadingView()
             switch result {
             case .success(let tarih):
-                self.getSonucSon(date: tarih[0]["tarih"]!)
-                self.dismissLoadingView()
-            case .failure(_):
-                print("error")
+                self.tarihler = tarih
+            case .failure(let error):
+                self.presentLSAlertOnMainThread(title: Alert.titleHata, titleColor: UIColor.systemRed, message: error.rawValue, buttonTitle: Alert.buttonTamam)
             }
         }
     }
- 
+    
     
     private func getSonuc(date: String){
-        
-        SonucManager.shared.getSonuc(for: "sayisal/SAY_", date: date) { [weak self] result in
+        SonucManager.shared.getSonuc(for: "onnumara/", date: date) { [weak self] result in
             guard let self = self else { return }
-            
             switch result {
-                
             case .success(let sonuc):
-                DispatchQueue.main.async {
-                    self.configureUIElement(with: sonuc)
-                    
-                }
-            case .failure(_):
-                print(date)
-                print("Error")
-            }
-        }
-    }
-
-    private func getSonucSon(date: String){
-        SonucManager.shared.getSonuc(for: "sayisal/SAY_", date: date) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-                
-            case .success(let sonuc):
-                DispatchQueue.main.async {
-                    self.configureUIElement(with: sonuc)
-                }
-            case .failure(_):
-                print(date)
-                print("Error")
+                self.configureData(with: sonuc)
+            case .failure(let error):
+                self.presentLSAlertOnMainThread(title: Alert.titleHata, titleColor: UIColor.systemRed, message: error.rawValue, buttonTitle: Alert.buttonTamam)
             }
         }
     }
     
-    private func configureUIElement(with sonucData: SonucData){
-        self.add(childVC: LSNumbersVC(sonucData: sonucData), to: ballView)
-        self.add(childVC: LSHeaderVC(sonucData: sonucData), to: headerView)
-        
-    }
     
     private func configureHeaderView(){
-        view.addSubview(headerView)
-        headerView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(headerView)
+        
         let padding : CGFloat = 20
         
         NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            headerView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: padding),
+            headerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            headerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
             headerView.heightAnchor.constraint(equalToConstant: 100)
         ])
-        
     }
     
     
-    private func configureBallsView(){
-        view.addSubview(ballView)
-        ballView.translatesAutoresizingMaskIntoConstraints = false
+    private func configureData(with data: SonucData){
+        DispatchQueue.main.async {
+            self.numberView.proccess(with: data)
+            self.headerView.process(with: data)
+            self.headerView.changeButton.addTarget(self, action: #selector(self.changeButtonTapped), for: .touchUpInside)
+            self.detailView.process(with: data)
+            self.scrollView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    
+    @objc func changeButtonTapped() {
+        let tarihList = TarihListVC()
+        tarihList.tarihler = tarihler!
+        tarihList.selectDateDelegate = self
+        navigationController?.pushViewController(tarihList, animated: true)
+    }
+    
+    
+    private func configureNumberView(){
+        contentView.addSubview(numberView)
         
         let padding : CGFloat = 20
         
         NSLayoutConstraint.activate([
-            ballView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
-            ballView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            ballView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            ballView.heightAnchor.constraint(equalToConstant: 100)
+            numberView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
+            numberView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            numberView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
+            numberView.heightAnchor.constraint(equalToConstant: 265)
         ])
-        
     }
     
-    func add(childVC: UIViewController, to containerView: UIView) {
-        addChild(childVC)
-        containerView.addSubview(childVC.view)
-        childVC.view.frame = containerView.bounds
-        childVC.didMove(toParent: self)
+    
+    private func configureDetailView(){
+        contentView.addSubview(detailView)
+        
+        let padding : CGFloat = 20
+        
+        NSLayoutConstraint.activate([
+            detailView.topAnchor.constraint(equalTo: numberView.bottomAnchor, constant: padding),
+            detailView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            detailView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
+            detailView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
+    
     
 }
 
+
 extension OnNumaraVC: SelectDateDelegate{
-    func didSelectDate(dateValue: String) {
-        getSonuc(date: dateValue)
-        
+    func didSelectDate(dateValue: Int) {
+        tarihRow = dateValue
     }
+    
 }
