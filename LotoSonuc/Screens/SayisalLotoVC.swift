@@ -123,7 +123,7 @@ class SayisalLotoVC: LSDataLoadingVC{
         
         notificationManager.resultNotifications(identifier: Identifier.sayisalLoto2, title: Bildirimler.sayisalLotoBildirimTitle, body: Bildirimler.sayisalLotoSonucHatirlatma , weekday: 4, hour: 22, minute: 00)
        
-        notificationManager.resultNotifications(identifier: Identifier.sayisalLoto3, title: Bildirimler.sayisalLotoBildirimTitle, body: Bildirimler.sayisalLotoSonucHatirlatma , weekday: 7, hour: 22, minute: 40)
+        notificationManager.resultNotifications(identifier: Identifier.sayisalLoto3, title: Bildirimler.sayisalLotoBildirimTitle, body: Bildirimler.sayisalLotoSonucHatirlatma , weekday: 7, hour: 22, minute: 00)
         
         self.presentLSAlertOnMainThread(title: Bildirimler.acildiTitle, titleColor: UIColor.label, message: Bildirimler.acildiSayisalLotoBody, buttonTitle: Alert.buttonTamam)
         
