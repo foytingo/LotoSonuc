@@ -104,7 +104,7 @@ class SansTopuVC: LSDataLoadingVC {
             case .notDetermined:
                 self.notificationManager.askPermission()
             case .denied:
-                self.presentLSAlertOnMainThread(title: Bildirimler.kapaliAlertTitle, titleColor: UIColor.systemRed, message: Bildirimler.kapaliAlertTitle, buttonTitle: Alert.buttonTamam)
+                self.presentLSAlertOnMainThread(title: Bildirimler.kapaliAlertTitle, titleColor: UIColor.systemRed, message: Bildirimler.kapaliAlertBody, buttonTitle: Alert.buttonTamam)
             case .authorized:
                 self.setNotification()
             case .provisional:

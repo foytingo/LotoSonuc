@@ -16,9 +16,7 @@ struct NotificationManager {
     func askPermission() {
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
         center.requestAuthorization(options: options) { (didAllow, error) in
-            if !didAllow {
-                print("User has decline notifications")
-            }
+            
         }
     }
     

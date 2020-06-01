@@ -85,16 +85,15 @@ class SayisalLotoVC: LSDataLoadingVC{
     
     
     @objc func bellFillButtonAction(){
-        isAlarmSet = !isAlarmSet
-        defaults.set(isAlarmSet, forKey: UserDefaultsKey.sayisalLotoAlarmSet)
         cancelNotification()
+        
+        
     }
     
     
     @objc func bellButtonAction() {
-        isAlarmSet = !isAlarmSet
-        defaults.set(isAlarmSet, forKey: UserDefaultsKey.sayisalLotoAlarmSet)
         checkNotificationAuthAndSetNotification()
+    
     }
     
     
@@ -103,8 +102,10 @@ class SayisalLotoVC: LSDataLoadingVC{
             switch settings.authorizationStatus {
             case .notDetermined:
                 self.notificationManager.askPermission()
+                break
             case .denied:
-                self.presentLSAlertOnMainThread(title: Bildirimler.kapaliAlertTitle, titleColor: UIColor.systemRed, message: Bildirimler.kapaliAlertTitle, buttonTitle: Alert.buttonTamam)
+                self.presentLSAlertOnMainThread(title: Bildirimler.kapaliAlertTitle, titleColor: UIColor.systemRed, message: Bildirimler.kapaliAlertBody, buttonTitle: Alert.buttonTamam)
+                break
             case .authorized:
                 self.setNotification()
             case .provisional:
@@ -117,6 +118,8 @@ class SayisalLotoVC: LSDataLoadingVC{
     
     
     private func setNotification(){
+        isAlarmSet = !isAlarmSet
+        defaults.set(isAlarmSet, forKey: UserDefaultsKey.sayisalLotoAlarmSet)
         notificationManager.reminderNotifications(identifier: Identifier.sayisalLoto0, title: Bildirimler.sayisalLotoBildirimTitle, body: Bildirimler.sayisalLotoOyunHatirlatma, weekday: 4, hour: 17, minute: 30)
         
         notificationManager.reminderNotifications(identifier: Identifier.sayisalLoto1, title: Bildirimler.sayisalLotoBildirimTitle, body: Bildirimler.sayisalLotoOyunHatirlatma, weekday: 7, hour: 17, minute: 30)
@@ -134,6 +137,8 @@ class SayisalLotoVC: LSDataLoadingVC{
     
     
     private func cancelNotification(){
+        isAlarmSet = !isAlarmSet
+        defaults.set(isAlarmSet, forKey: UserDefaultsKey.sayisalLotoAlarmSet)
         notificationManager.center.removePendingNotificationRequests(withIdentifiers: [Identifier.sayisalLoto0,Identifier.sayisalLoto1,Identifier.sayisalLoto2,Identifier.sayisalLoto3])
         
         self.presentLSAlertOnMainThread(title: Bildirimler.kapandiTitle, titleColor: UIColor.label, message: Bildirimler.kapandiSayisalLotoBody, buttonTitle: Alert.buttonTamam)
