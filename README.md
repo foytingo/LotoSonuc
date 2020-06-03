@@ -1,6 +1,6 @@
 
 # LotoSonuc
-![](https://i.imgur.com/POesNDh.png)
+![](https://i.imgur.com/K80qwH5.png)
 
 iOS application that you can see Milli Piyango Loto games result(Numbers and winners).
 Data comes from Millipiyango's website
